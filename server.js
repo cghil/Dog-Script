@@ -55,36 +55,30 @@ MYSCRIPT.dog = {
         return dogIDs;
     },
 
-    createNewDogs: function(){
+    createNewDogs: function() {
         var dogs = JSON.parse(fs.readFileSync('./dogs.json', 'utf8'));
         var that = this;
-        dogs.forEach(function(dog){
+        dogs.forEach(function(dog) {
             that.createADog(dog);
         })
     },
 
-    removeDogData: function(data) {},
-
-    start: function() {
-        function mainCallBack(that, data) {
-            var ids = that.filterForExistingDogIDs(data);
-            console.log(ids.length);
-            if(ids.length > 0){
-                async.each(
-                    ids,
-                    function(id, callback){
-                        that.deleteADog(id);
-                    }, function(err){
-                        that.createNewDogs();
-                        console.log('finished...')
-                    }
-                )   
-            } else {
-                console.log('Greater than 3')
+    mainCallbackLogic: function(that, data) {
+        var ids = that.filterForExistingDogIDs(data);
+        async.each(
+            ids,
+            function(id, callback) {
+                that.deleteADog(id);
+            },
+            function(err) {
+                console.log('finished deleting all dogs! Now working on creating new dogs.')
                 that.createNewDogs();
             }
-        }
-        this.getDogs(mainCallBack);
+        )
+    },
+
+    start: function() {
+        this.getDogs(this.mainCallbackLogic);
     }
 };
 
