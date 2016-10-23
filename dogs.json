@@ -1,0 +1,31 @@
+[
+   {
+      "name":"Waffles",
+      "contact_info":"(333) 333-3333",
+      "photo_url":"https://www.instagram.com/p/BHyDUAUjanC",
+      "owner":"Puff Daddy",
+      "nicknames":[
+         "Puff Puppy",
+         "Waf"
+      ]
+   },
+   {
+      "name":"Jamal",
+      "contact_info":"(312) 444-3333",
+      "photo_url":"https://www.instagram.com/p/BHjxxfljtB-/",
+      "owner":"Cindy Lou",
+      "nicknames":[
+         "Hipster"
+      ]
+   },
+   {
+      "name":"Carl",
+      "contact_info":"(311) 444-1111",
+      "photo_url":"https://www.instagram.com/p/BGuWw-PDel6",
+      "owner":"D'angelo Russell",
+      "nicknames":[
+         "Sir Lick A Lot",
+         "Lil pup"
+      ]
+   }
+]
